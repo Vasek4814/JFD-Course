@@ -1,5 +1,4 @@
-let userString = prompt('Введите текст для обрезки');
-userString = userString.trim();
+let userString = prompt('Введите текст для обрезки').trim();
 let startSliceIndex = +prompt(
   'Введите индекс, с которого нужно начать обрезку строки'
 );
