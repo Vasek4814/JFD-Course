@@ -1,6 +1,6 @@
 const clientName = 'Игорь';
-let clientSpentForAllTime = 135;
-const clientSpentToday = 25;
+let clientSpentForAllTime = 110;
+let clientSpentToday = 25;
 let discount = 0;
 
 if (clientSpentForAllTime >= 100 && clientSpentForAllTime < 300) {
@@ -10,6 +10,9 @@ if (clientSpentForAllTime >= 100 && clientSpentForAllTime < 300) {
 } else if (clientSpentForAllTime >= 500) {
   discount = 30;
 }
+
+clientSpentForAllTime = clientSpentForAllTime + clientSpentToday;
+clientSpentToday = clientSpentToday - (clientSpentToday * discount) / 100;
 
 alert(
   `Спасибо ${clientName}! К оплате ${clientSpentToday}$. За всё вермя в нашем ресторане вы потратили ${clientSpentForAllTime}$.`
