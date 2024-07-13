@@ -1,23 +1,23 @@
-const clientName = 'Игорь';
-let clientSpentForAllTime = 110;
-let clientSpentToday = 25;
-let discount = 0;
+// const clientName = 'Игорь';
+// let clientSpentForAllTime = 110;
+// let clientSpentToday = 25;
+// let discount = 0;
 
-if (clientSpentForAllTime >= 100 && clientSpentForAllTime < 300) {
-  discount = 10;
-} else if (clientSpentForAllTime >= 300 && clientSpentForAllTime < 500) {
-  discount = 20;
-} else if (clientSpentForAllTime >= 500) {
-  discount = 30;
-}
+// if (clientSpentForAllTime >= 100 && clientSpentForAllTime < 300) {
+//   discount = 10;
+// } else if (clientSpentForAllTime >= 300 && clientSpentForAllTime < 500) {
+//   discount = 20;
+// } else if (clientSpentForAllTime >= 500) {
+//   discount = 30;
+// }
 
-clientSpentForAllTime = clientSpentForAllTime + clientSpentToday;
-clientSpentToday = clientSpentToday - (clientSpentToday * discount) / 100;
+// clientSpentForAllTime = clientSpentForAllTime + clientSpentToday;
+// clientSpentToday = clientSpentToday - (clientSpentToday * discount) / 100;
 
-alert(
-  `Спасибо ${clientName}! К оплате ${clientSpentToday}$. За всё вермя в нашем ресторане вы потратили ${clientSpentForAllTime}$.`
-);
-alert(`Вам предоставляется скидка в ${discount}%`);
+// alert(
+//   `Спасибо ${clientName}! К оплате ${clientSpentToday}$. За всё вермя в нашем ресторане вы потратили ${clientSpentForAllTime}$.`
+// );
+// alert(`Вам предоставляется скидка в ${discount}%`);
 
 /* "Представим, что мы разрабатываем сайт для ресторана, 
 в котором действует программа скидок. Ресторан подсчитывает 
@@ -55,3 +55,33 @@ alert() сообщение: “Спасибо, clientName!
 потратили clientSpentForAllTime$.” (замените clientName, 
 clientSpentToday и clientSpentForAllTime на соответствующие 
 значения переменных)." */
+
+const clientName = prompt('Введите имя клиента');
+let clientSpentToday = Number(prompt('сколько клиент потратил сегоня?'));
+let clientSpentForAllTime = Number(
+  prompt('Сколько клиент потратил за всё время?')
+);
+let discount = 0;
+
+if (typeof clientSpentToday && typeof clientSpentForAllTime !== 'number') {
+  alert(
+    'Сумма, которую клиент потратил за все время и которую потратил сегодня, должна быть числом! Перезагрузи страницу, чтобы повторить попытку'
+  );
+} else {
+  if (clientSpentForAllTime >= 100 && clientSpentForAllTime < 300) {
+    discount = 10;
+  } else if (clientSpentForAllTime >= 300 && clientSpentForAllTime < 500) {
+    discount = 20;
+  } else if (clientSpentForAllTime >= 500) {
+    discount = 30;
+  }
+
+  alert(`Вам предоставляется скидка в ${discount}%!`);
+
+  clientSpentToday = clientSpentToday - (clientSpentToday * discount) / 100;
+  clientSpentForAllTime += clientSpentToday;
+
+  alert(
+    `Спасибо, ${clientName}! К оплате ${clientSpentToday}$. За все время в нашем ресторане вы потратили ${clientSpentForAllTime}$.`
+  );
+}
