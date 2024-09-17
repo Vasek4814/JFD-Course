@@ -1,15 +1,10 @@
 const getSumOfSequence = (number) => {
-    const getSumOfSequenceArray = []
-    for (let i = 0; i <= number; i++) {
-        getSumOfSequenceArray.push(i)
+    let arr = []
+    for(let i = 0; i <= number; i++){
+    arr.push(i)
     }
-    console.log('getSumOfSequenceArray', getSumOfSequenceArray)
-    return getSumOfSequenceArray[0] + getSumOfSequenceArray[number]
-    
-    
+    console.log(arr)
+    return arr[0] + arr[arr.length - 1]
 }
 getSumOfSequence(5)
-
-// const listOfOrders = 'Майка, шорты, кроссовки, рюкзак'
-// const listOfOrdersArray = listOfOrders.split(', ')
-// console.log(listOfOrdersArray)
+console.log('getSumOfSequence: ', getSumOfSequence(5))
