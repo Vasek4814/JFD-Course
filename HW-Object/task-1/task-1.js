@@ -2,16 +2,22 @@ const users = [
     {
         username: 'David',
         status: 'online',
-        lastActivity: 10
+        lastActivity: 104
     }, {
         username: 'Lucy',
         status: 'offline',
-        lastActivity: 22
+        lastActivity: 104
     }, {
         username: 'Bob',
         status: 'online',
-        lastActivity: 104
+        lastActivity: 1
     }
  ]
 
- const onlineUser = dsaas
+    const onlineUser = users.filter((user) => 
+        user.status === 'online')
+    const userOnlineNames = ['David', 'Bob']
+
+ alert(`Сейчас в онлайн следующие пользователи: ${userOnlineNames}`)
+ 
+console.log('onlineUser: ',onlineUser)
