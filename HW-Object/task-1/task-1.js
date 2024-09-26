@@ -11,16 +11,26 @@ const users = [
         username: 'Bob',
         status: 'online',
         lastActivity: 1
-    }
+    }, 
+    // {
+//         username: 'Vasya',
+//         status: 'online',
+//         lastActivity: 32
+//     }
  ]
 
     const onlineUser = users.filter((user) => 
         user.status === 'online')
-    const userOnlineNames = ['David', 'Bob']
+
+    const userOnlineNames = onlineUser.map(onlineNames => 
+        onlineNames.username)
+
+    console.log('onlineUser: ',onlineUser)
+    console.log('userOnlineNames: ', userOnlineNames)
 
  alert(`Сейчас в онлайн следующие пользователи: ${userOnlineNames}`)
  
-console.log('onlineUser: ',onlineUser)
+
 
 /*
 Вам необходимо создать новый массив onlineUsers, 
