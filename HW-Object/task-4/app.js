@@ -2,7 +2,7 @@ const getKiller = (suspectinfo, deadpeople) => {
 
 
 
-    
+
 }
 
 getKiller(
