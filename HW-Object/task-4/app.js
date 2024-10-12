@@ -18,6 +18,7 @@ const result = getKiller(
   ['Lucas', 'Bill']
 );
 
+<<<<<<< HEAD
 const result2 = getKiller(
   {
     Brad: [],
@@ -27,3 +28,25 @@ const result2 = getKiller(
   ['Ben']
 );
 console.log(result, result2);
+=======
+
+
+}
+
+getKiller(
+    {
+        'James': ['Jacob', 'Bill', 'Lucas'],
+        'Johnny': ['David', 'Kyle', 'Lucas'],
+        'Peter': ['Lucy', 'Kyle'],
+    }, ['Lucas', 'Bill']
+ );
+  
+ getKiller(
+    {
+        'Brad': [],
+        'Megan': ['Ben', 'Kevin'],
+        'Finn': [],
+    },
+    ['Ben']
+ );
+>>>>>>> b94c05fa01783a9748f3f334b504f16d94b7faad
