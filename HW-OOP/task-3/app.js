@@ -15,11 +15,12 @@ class CarService {
       console.error(
         'Вам необходимо указать название машины, чтоб её отремонтровали'
       );
-    } else if (currentHours > from && currentHours < till) {
+    } else if (currentHours < from && currentHours > till) {
+      console.log('К сожалению, мы сейчас закрыты. Приходите завтра');
+    } else
       console.log(
         `Сейчас отремонтируем вашу машину ${carName}! Ожидайте, пожалуйста!`
       );
-    } else console.log('К сожалению, мы сейчас закрыты. Приходите завтра');
   }
 }
 const carService = new CarService('RepairCarNow', {
